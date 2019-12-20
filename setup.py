@@ -33,8 +33,6 @@ os.makedirs(str(MIME_DIR.parent / 'bin'), exist_ok=True)
 with OperateInDirectory(str(MIME_DIR)):
     file_output, file_code = execute_shell_command(
         '(cat custom_* > custommime)'
-        ' && file -C -m custommime'
-        ' && mv -f custommime.mgc ../bin/'
         ' && rm custommime'
     )
     if file_code != 0:
